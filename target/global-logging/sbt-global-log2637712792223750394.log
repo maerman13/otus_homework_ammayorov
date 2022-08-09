@@ -1,0 +1,86 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.6.2 (Amazon.com Inc. Java 1.8.0_322)
+[debug]       Load.loadUnit: plugins took 121.448917ms
+[debug]       Load.loadUnit: defsScala took 0.318958ms
+[debug] [Loading] Scanning directory /Users/andreimaiorov/.sbt/1.0/plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/andreimaiorov/.sbt/1.0/plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 18.130917 ms
+[debug]           Load.resolveProject(global-plugins) took 55.840917ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: /Users/andreimaiorov/.sbt/1.0/plugins, plugins: List(<none>))) took 99.543834ms
+[debug] [Loading] Done in /Users/andreimaiorov/.sbt/1.0/plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 144.34175ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.261333ms
+[debug]     Load.loadUnit(file:/Users/andreimaiorov/.sbt/1.0/plugins/, ...) took 276.870041ms
+[debug]   Load.apply: load took 630.377667ms
+[debug]   Load.apply: resolveProjects took 5.112459ms
+[debug]   Load.apply: finalTransforms took 98.699417ms
+[debug]   Load.apply: config.delegates took 12.170416ms
+[debug]   Load.apply: Def.make(settings)... took 1098.055958ms
+[debug]   Load.apply: structureIndex took 282.5915ms
+[debug]   Load.apply: mkStreams took 1.234ms
+[info] loading global plugins from /Users/andreimaiorov/.sbt/1.0/plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 5284.282125ms
+[debug]           Load.loadUnit: plugins took 27.520416ms
+[debug]           Load.loadUnit: defsScala took 0.003125ms
+[debug] [Loading] Scanning directory /Users/andreimaiorov/Desktop/otus_homework_ammayorov/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/andreimaiorov/Desktop/otus_homework_ammayorov/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 8.683666 ms
+[debug]               Load.resolveProject(otus_homework_ammayorov-build) took 7.380375ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id otus_homework_ammayorov-build, base: /Users/andreimaiorov/Desktop/otus_homework_ammayorov/project, plugins: List(<none>))) took 21.66425ms
+[debug] [Loading] Done in /Users/andreimaiorov/Desktop/otus_homework_ammayorov/project, returning: (otus_homework_ammayorov-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 34.924709ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.038583ms
+[debug]         Load.loadUnit(file:/Users/andreimaiorov/Desktop/otus_homework_ammayorov/project/, ...) took 64.042042ms
+[debug]       Load.apply: load took 69.095041ms
+[debug]       Load.apply: resolveProjects took 0.375208ms
+[debug]       Load.apply: finalTransforms took 23.177417ms
+[debug]       Load.apply: config.delegates took 3.278708ms
+[debug]       Load.apply: Def.make(settings)... took 453.652917ms
+[debug]       Load.apply: structureIndex took 73.483958ms
+[debug]       Load.apply: mkStreams took 0.002125ms
+[info] loading project definition from /Users/andreimaiorov/Desktop/otus_homework_ammayorov/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to /Users/andreimaiorov/Desktop/otus_homework_ammayorov/project/target/scala-2.12/sbt-1.0/classes ...
+[info] done compiling
+[debug]     Load.loadUnit: plugins took 7271.838125ms
+[debug]     Load.loadUnit: defsScala took 0.003791ms
+[debug] [Loading] Scanning directory /Users/andreimaiorov/Desktop/otus_homework_ammayorov
+[debug]       Load.loadUnit: mkEval took 14.405292ms
