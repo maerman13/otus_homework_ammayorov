@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfe4445a-7761-4a84-9eaf-3d2a5e8f5b5d" name="Changes" comment="" />
+    <list default="true" id="bfe4445a-7761-4a84-9eaf-3d2a5e8f5b5d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/scala-dev-mooc-2022-06-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/scala-dev-mooc-2022-06-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/module2/homework_hkt_impllicts.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/module2/homework_hkt_impllicts.scala" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +22,28 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="otus_homework_ammayorov" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -43,6 +67,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="homework_hkt_impllicts" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="module2.homework_hkt_impllicts" />
+      <module name="scala-dev-mooc-2022-06" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="module2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -54,6 +91,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.homework_hkt_impllicts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -66,6 +108,9 @@
       <workItem from="1659787475203" duration="657000" />
       <workItem from="1659966351420" duration="32000" />
       <workItem from="1660051158062" duration="98000" />
+      <workItem from="1660051337629" duration="3549000" />
+      <workItem from="1660055110141" duration="1857000" />
+      <workItem from="1660069671376" duration="4337000" />
     </task>
     <servers />
   </component>
