@@ -1,4 +1,5 @@
-project/
-project
-.idea
 target
+.idea
+project/target
+.DS_Store
+ints.txt
