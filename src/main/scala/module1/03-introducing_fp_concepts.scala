@@ -391,16 +391,17 @@ object list {
      * Реализовать метод filter для списка который будет фильтровать список по некому условию
      */
 
-    // toDO
-    // см. коммент к mkString
     def filter[TT >: T](p: T => Boolean): List[T] = {
       var filtredList = List[T]()
-      var currentList = this
-      while(!currentList.isEmpty()) {
-        if(p(currentList.head())) {
-          filtredList = filtredList.cons(currentList.head())
+      createFilterFromHead(this)
+      def createFilterFromHead(currentList: List[T]): Unit = currentList.isEmpty() match {
+        case false => {
+          if(p(currentList.head())) {
+            filtredList = filtredList.cons(currentList.head())
+          }
+          if (!currentList.tail().isEmpty()) createFilterFromHead(currentList.tail())
         }
-        currentList = currentList.tail()
+        case true => throw new Exception("filter on empty list")
       }
       filtredList.reverse()
     }
