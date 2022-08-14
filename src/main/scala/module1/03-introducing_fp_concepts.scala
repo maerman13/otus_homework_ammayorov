@@ -238,6 +238,7 @@ object hof{
 
     def printIfAny: Unit = this match {
       case Option.Some(v) => println(v)
+      case Option.None =>
     }
 
     /**
@@ -246,7 +247,21 @@ object hof{
      */
 
     def zip[A1 >: T, B](option2: Option[B]): Option[(T, B)]  = {
-      Option.Some[(T, B)]((this.get, option2.get))
+
+      this match {
+        case Option.Some(x) => {
+          option2 match {
+            case Option.Some(v) => Option.Some[(T, B)]((this.get, option2.get))
+            case Option.None => Option.Some[(T, B)]((this.get, null.asInstanceOf[B]))
+          }
+        }
+        case Option.None => {
+          option2 match {
+            case Option.Some(v) => Option.Some[(T, B)]((null.asInstanceOf[T], option2.get))
+            case Option.None => Option.Some[(T, B)]((null.asInstanceOf[T], null.asInstanceOf[B]))
+          }
+        }
+      }
     }
 
     /**
@@ -256,8 +271,7 @@ object hof{
      */
 
     def filter(p: T => Boolean): Option[T] = {
-      if (!this.isEmpty) this
-      else Option.None
+      if (!this.isEmpty && p(this.get)) this else Option.None
     }
 
   }
@@ -288,29 +302,17 @@ object list {
 
   trait List[+T]{
 
-    def get(): T = {
+    def head(): T = {
       this match {
         case List.::(x, y) => x
+        case List.Nil => throw new Exception("head on empty list")
       }
     }
 
-    def getNext[TT >: T](): List[T] = {
+    def tail[TT >: T](): List[T] = {
       this match {
         case List.::(x, y) => y
-        case _ => {
-          println("null")
-          null
-        }
-      }
-    }
-
-    def getPrevious[TT >: T](): List[T] = {
-      this match {
-        case List.::(x, y) => y
-        case _ => {
-          println("null")
-          null
-        }
+        case List.Nil => throw new Exception("tail on empty list")
       }
     }
 
@@ -337,11 +339,14 @@ object list {
 
     def mkString(delimeter: String): String = {
       var stringRepresentaion: String = ""
-      var currentList = this
-      while(!currentList.isEmpty()) {
-        stringRepresentaion += currentList.get()
-        if (!currentList.getNext().isEmpty()) stringRepresentaion += delimeter
-        currentList = currentList.getNext()
+      mkStringFromHead(this)
+      def mkStringFromHead(currentList: List[T]): Unit = currentList.isEmpty() match {
+        case false => {
+          stringRepresentaion += currentList.head()
+          if (!currentList.tail().isEmpty()) stringRepresentaion += delimeter
+          if (!currentList.tail().isEmpty()) mkStringFromHead(currentList.tail())
+        }
+        case true => throw new Exception("mkString on empty list")
       }
       stringRepresentaion
     }
@@ -353,10 +358,13 @@ object list {
 
     def reverse[TT >: T](): List[T] = {
       var reserseList = List[T]()
-      var currentList = this
-      while(!currentList.isEmpty()) {
-        reserseList = reserseList.cons(currentList.get())
-        currentList = currentList.getNext()
+      createReverseFromHead(this)
+      def createReverseFromHead(currentList: List[T]): Unit = currentList.isEmpty() match {
+        case false => {
+          reserseList = reserseList.cons(currentList.head())
+          if (!currentList.tail().isEmpty()) createReverseFromHead(currentList)
+        }
+        case true => throw new Exception("reverse on empty list")
       }
       reserseList
     }
@@ -368,10 +376,12 @@ object list {
 
     def map[TT >: T](func: T => TT): List[T] = {
       var mapList = List[T]()
-      var currentList = this
-      while(!currentList.isEmpty()) {
-        mapList = mapList.cons(func(currentList.get()).asInstanceOf[T])
-        currentList = currentList.getNext()
+      def createMapFromHead(currentList: List[T]): Unit = currentList.isEmpty() match {
+        case false => {
+          mapList = mapList.cons(func(currentList.head()).asInstanceOf[T])
+          if (!currentList.tail().isEmpty()) createMapFromHead(currentList)
+        }
+        case true => throw new Exception("map on empty list")
       }
       mapList.reverse()
     }
@@ -381,14 +391,16 @@ object list {
      * Реализовать метод filter для списка который будет фильтровать список по некому условию
      */
 
+    // toDO
+    // см. коммент к mkString
     def filter[TT >: T](p: T => Boolean): List[T] = {
       var filtredList = List[T]()
       var currentList = this
       while(!currentList.isEmpty()) {
-        if(p(currentList.get())) {
-          filtredList = filtredList.cons(currentList.get())
+        if(p(currentList.head())) {
+          filtredList = filtredList.cons(currentList.head())
         }
-        currentList = currentList.getNext()
+        currentList = currentList.tail()
       }
       filtredList.reverse()
     }
@@ -415,7 +427,7 @@ object list {
   }
 
   object List{
-    case class ::[A](head: A, tail: List[A]) extends List[A]
+    case class ::[A](headElem: A, tailElem: List[A]) extends List[A]
     case object Nil extends List[Nothing]
 
     /**
