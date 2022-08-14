@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfe4445a-7761-4a84-9eaf-3d2a5e8f5b5d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/scala-dev-mooc-2022-06-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/scala-dev-mooc-2022-06-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/module2/homework_hkt_impllicts.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/module2/homework_hkt_impllicts.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,8 @@
       <workItem from="1660051158062" duration="98000" />
       <workItem from="1660051337629" duration="3549000" />
       <workItem from="1660055110141" duration="1857000" />
-      <workItem from="1660069671376" duration="4337000" />
+      <workItem from="1660069671376" duration="5042000" />
+      <workItem from="1660111257031" duration="160000" />
     </task>
     <servers />
   </component>
