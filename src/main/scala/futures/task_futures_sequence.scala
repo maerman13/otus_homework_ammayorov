@@ -1,10 +1,6 @@
 package futures
 
-import com.sun.xml.internal.fastinfoset.sax.Features
-
-import scala.concurrent.{Await, ExecutionContext, Future}
-import scala.util.{Failure, Success, Try}
-import scala.concurrent.duration.Duration
+import scala.concurrent.{ExecutionContext, Future}
 
 object task_futures_sequence extends App {
 
