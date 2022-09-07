@@ -1,6 +1,7 @@
 package futures
 
 import scala.concurrent.{ExecutionContext, Future}
+import scala.util.{Success, Failure}
 
 object task_futures_sequence extends App {
 
@@ -20,10 +21,12 @@ object task_futures_sequence extends App {
    */
 
   def fullSequence[A](futures: List[Future[A]])(implicit ex: ExecutionContext): Future[(List[Any], List[Throwable])] = {
-
-    Future.sequence(futures.map(x => x.recover { case exception => exception }))
-      .map(x =>
-        (x.filter(z => !z.isInstanceOf[Throwable]).asInstanceOf[List[A]],
-          x.filter(z => z.isInstanceOf[Throwable]).asInstanceOf[List[Throwable]]))
+    futures.foldLeft(Future.successful((List[Any](), List[Throwable]()))) { (futures, future) =>
+      futures.flatMap { case (accumSuccess, accumErrors) =>
+        future
+          .map { success => (accumSuccess :+ success, accumErrors) }
+          .recover { case error: Throwable => (accumSuccess, accumErrors :+ error) }
+      }
+    }
   }
 }
